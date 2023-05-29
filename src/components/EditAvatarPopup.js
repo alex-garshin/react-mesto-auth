@@ -24,6 +24,9 @@ function EditAvatarPopup({ isOpen, onClose, onUpdateAvatar, onLoading }) {
       isOpen={isOpen}
       onClose={onClose}
       onSubmit={handleSubmit}
+      buttonText={"Сохранить"}
+      onLoading={onLoading}
+      isFormValid={isFormValid}
     >
       <fieldset className="form__set">
         <input
@@ -40,9 +43,6 @@ function EditAvatarPopup({ isOpen, onClose, onUpdateAvatar, onLoading }) {
           {errors.avatar}
         </span>
 
-        <button className="form__submit" type="submit" disabled={!isFormValid}>
-          {onLoading ? "Сохранение..." : "Сохранить"}
-        </button>
       </fieldset>
     </PopupWithForm>
   );

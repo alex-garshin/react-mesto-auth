@@ -22,6 +22,9 @@ function AddPlacePopup({ isOpen, onClose, onAddPlace, onLoading }) {
       isOpen={isOpen}
       onClose={onClose}
       onSubmit={handleSubmit}
+      buttonText={"Создать"}
+      onLoading={onLoading}
+      isFormValid={isFormValid}
     >
       <fieldset className="form__set">
         <input
@@ -53,10 +56,6 @@ function AddPlacePopup({ isOpen, onClose, onAddPlace, onLoading }) {
         <span id="link-error" className="form__input-error">
           {errors.link}
         </span>
-
-        <button className="form__submit" type="submit" disabled={!isFormValid}>
-          {onLoading ? "Сохранение..." : "Создать"}
-        </button>
       </fieldset>
     </PopupWithForm>
   );

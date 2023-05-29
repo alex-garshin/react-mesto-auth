@@ -29,6 +29,9 @@ function EditProfilePopup({ isOpen, onClose, onUpdateUser, onLoading }) {
       isOpen={isOpen}
       onClose={onClose}
       onSubmit={handleSubmit}
+      buttonText={"Сохранить"}
+      onLoading={onLoading}
+      isFormValid={isFormValid}
     >
       <fieldset className="form__set">
         <input
@@ -63,9 +66,6 @@ function EditProfilePopup({ isOpen, onClose, onUpdateUser, onLoading }) {
           {errors.about}
         </span>
 
-        <button className="form__submit" type="submit" disabled={!isFormValid}>
-          {onLoading ? "Сохранение..." : "Сохранить"}
-        </button>
       </fieldset>
     </PopupWithForm>
   );

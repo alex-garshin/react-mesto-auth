@@ -13,10 +13,10 @@ function DeleteCardPopup({ card, onClose, onConfirm, onLoading }) {
       isOpen={card}
       onClose={onClose}
       onSubmit={handleSubmit}
+      buttonText={"Да"}
+      onLoading={onLoading}
+      disableValidation={true}
     >
-      <button className="form__submit" type="submit">
-        {onLoading ? "Удаление..." : "Да"}
-      </button>
     </PopupWithForm>
   );
 }
