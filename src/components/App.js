@@ -53,9 +53,7 @@ function App() {
           setCurrentUser(userData);
         })
         .catch((err) => {
-          console.log(
-            `Ошибка: ${err}`
-          );
+          console.log(`Ошибка: ${err}`);
         });
     }
   }, [isLoggedIn]);
@@ -94,9 +92,7 @@ function App() {
         closeAllPopups();
       })
       .catch((err) => {
-        console.log(
-          `Ошибка: ${err}`
-        );
+        console.log(`Ошибка: ${err}`);
       })
       .finally(() => {
         setIsLoading(false);
@@ -195,6 +191,7 @@ function App() {
         setIsLoggedIn(true);
         localStorage.setItem("jwt", res.token);
         history.push("/");
+        handleTokenCheck();
       })
       .catch((err) => {
         setIsInfoTooltipOpen(true);

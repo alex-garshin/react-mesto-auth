@@ -4,7 +4,7 @@ import { useIsMobile } from "../hooks/useIsMobile";
 import headerLogo from "../images/logo-place.svg";
 
 function Header(props) {
-  let location = useLocation();
+  const location = useLocation();
 
   const isMobile = useIsMobile();
 
@@ -41,11 +41,7 @@ function Header(props) {
     <header className={isOpen ? "header_type_mobile" : "header page__header"}>
       {children}
       <div className={isMobile ? "header__menu-mobile-container" : null}>
-        <img
-          className="header__logo"
-          src={headerLogo}
-          alt="Логотип"
-        />
+        <img className="header__logo" src={headerLogo} alt="Логотип" />
         {isMobile && loggedIn && (
           <button
             className={`header__auto-menu ${

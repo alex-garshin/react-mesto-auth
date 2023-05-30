@@ -35,14 +35,13 @@ function EditAvatarPopup({ isOpen, onClose, onUpdateAvatar, onLoading }) {
           name="avatar"
           id="avatar"
           placeholder="Ссылка на картинку"
-          value={enteredValues.avatar}
+          value={enteredValues.avatar || ""}
           onChange={handleChange}
           required
         />
         <span id="avatar-error" className="form__input-error">
           {errors.avatar}
         </span>
-
       </fieldset>
     </PopupWithForm>
   );
